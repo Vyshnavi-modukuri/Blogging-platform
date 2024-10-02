@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reg.css">
+    <title>Registration Page</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <!-- <nav class="navbar">
+        <img src="img/logo.png" class="logo" alt="Logo">
+        <ul class="links-container">
+            <li class="link-item"><a href="#" class="link">Home</a></li>
+            <li class="link-item"><a href="#" class="link">About</a></li>
+            <li class="link-item"><a href="#" class="link">Signin</a></li>
+            <li class="link-item"><a href="#" class="link">Signup</a></li>
+        </ul>
+    </nav> -->
+
+    <!-- Background Video -->
+    <video autoplay muted loop class="background-video">
+        <source src="video2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="container">
+        <h2 style="color: orangered;">Create, Connect, and Inspire!</h2>
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" required>
+            </div>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <p id="email-error" class="error-message"></p> <!-- Error message for email -->
+            </div>
+            <div class="form-group">
+                <label for="area-of-interest">Area of Interest</label>
+                <select id="area-of-interest" name="area-of-interest" required>
+                    <option value="">Select your area of interest</option>
+                    <option value="web-development">Web Development</option>
+                    <option value="data-science">Data Science</option>
+                    <option value="machine-learning">Machine Learning</option>
+                    <option value="cybersecurity">Cybersecurity</option>
+                    <option value="cloud-computing">Cloud Computing</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                Show Password
+                <label class="show-password">
+                    <input type="checkbox" onclick="togglePasswordVisibility('password')">
+                </label>
+                <p id="password-error" class="error-message"></p> <!-- Error message for password -->
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+                Show Password
+                <label class="show-password">
+                    <input type="checkbox" onclick="togglePasswordVisibility('confirm-password')">
+                </label>
+                <p id="confirm-password-error" class="error-message"></p> <!-- Error message for confirm password -->
+            </div>
+            <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="login.html">Login here</a></p>
+        <!-- Go to Home Button -->
+    <button class="home-button" onclick="location.href='index.html'">Go to Home</button>
+    </div>
+    
+    <script src="reg_script.js"></script>
+</body>
+</html>

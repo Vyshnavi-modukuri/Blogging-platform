@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doodle Diary</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    /* Wrapper for images */
+    .slideshow-wrapper {
+      display: flex;
+      width: 300%; /* Adjust width based on number of images */
+      height: 100%;
+      animation: slide 120s linear infinite; /* Continuous animation */
+    }
+
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-200%); } /* Moves to end of the slideshow */
+    }
+
+    .slideshow-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Style for the login container */
+    .login-container {
+      background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent */
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      width: 400px;
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); /* Center the container */
+      z-index: 1;
+    }
+
+    h2 {
+      margin-bottom: 30px;
+      font-size: 24px;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .show-password {
+      font-size: 12px;
+      color: #007bff;
+      cursor: pointer;
+      float: right;
+      margin-top: -25px;
+      margin-right: 10px;
+      position: relative;
+    }
+
+    .remember-me {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .remember-me input {
+      margin-right: 10px;
+    }
+
+    button {
+      width: 100%;
+      padding: 8px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-top: 15px;
+    }
+
+    button:disabled {
+      background-color: #ddd;
+    }
+
+    .social-login {
+      margin-top: 30px;
+    }
+
+    .social-login button {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 5px;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #ddd;
+      background-color: white;
+      color: #333;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .social-login button img {
+      margin-right: 10px;
+    }
+
+    .signup {
+      margin-top: 20px;
+    }
+
+    .signup a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 12px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Slideshow container -->
+  <div class="slideshow-container">
+    <div class="slideshow-wrapper">
+      <img src="https://www.socialseo.com/wp-content/uploads/2019/12/iStock-1087352184-1.jpg" class="slideshow-image">
+      <img src="https://th.bing.com/th/id/OIP.a5YOm_1N-oe-O025Jw4PTQHaE8?w=263&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" class="slideshow-image">
+      <img src="https://pbwebdev.co.uk/wp-content/uploads/2018/12/blogs.jpg" class="slideshow-image">
+      <img src="https://www.socialseo.com/wp-content/uploads/2019/12/iStock-1087352184-1.jpg" class="slideshow-image">
+      <img src="https://th.bing.com/th/id/OIP.a5YOm_1N-oe-O025Jw4PTQHaE8?w=263&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" class="slideshow-image">
+      <img src="https://pbwebdev.co.uk/wp-content/uploads/2018/12/blogs.jpg" class="slideshow-image">
+    </div>
+  </div>
+
+  <div class="login-container">
+    <h2>Doodle Diary</h2>
+    <form id="loginForm">
+      <div class="input-group">
+        <label for="email">Email address</label>
+        <input type="email" id="email" required>
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" required>
+        <span class="show-password" onclick="togglePassword()">Show Password</span>
+      </div>
+      <div class="remember-me">
+        <input type="checkbox" id="rememberMe">
+        <label for="rememberMe">Remember me</label>
+      </div>
+      <button type="submit" id="loginButton">Log in</button>
+    </form>
+
+    <div class="social-login">
+      <button><img src="https://up.yimg.com/ib/th?id=OIP.AfKMLf4rKX7EqOSAVpujIQHaEK&pid=Api&rs=1&c=1&qlt=95&w=166&h=93" alt="Google" width="15"> Sign in with Google</button>
+      <button><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2048px-Microsoft_logo.svg.png" alt="Microsoft" width="10"> Sign in with Microsoft</button>
+      <!-- <button><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" width="10"> Sign in with Apple</button> -->
+    </div>
+
+    <div class="signup">
+      <p>Create a free account or <a href="reg.html">get started for free</a></p>
+    </div>
+    <button class="home-button" onclick="location.href='index.html'">Go to Home</button>
+
+    <footer>
+      &copy; 2024 YourCompany. All rights reserved. <a href="#">Privacy Policy</a>
+    </footer>
+  </div>
+
+  <script>
+    function togglePassword() {
+      const passwordField = document.getElementById('password');
+      const passwordType = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+      passwordField.setAttribute('type', passwordType);
+    }
+
+    const loginForm = document.getElementById('loginForm');
+    loginForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // prevent form submission for demo
+
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      if (email === "admin@example.com" && password === "12345") {
+        alert('Login successful!');
+        // Add your login logic here
+      } else {
+        alert('Invalid login credentials.');
+      }
+    });
+  </script>
+
+</body>
+</html>
